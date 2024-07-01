@@ -30,6 +30,7 @@ use LasseRafn\Economic\Builders\VoucherBuilder;
 use LasseRafn\Economic\Models\CompanySelf;
 use LasseRafn\Economic\Utils\Model;
 use LasseRafn\Economic\Utils\Request;
+use LasseRafn\Economic\Builders\DraftInvoiceAttachmentBuilder;
 
 class Economic
 {
@@ -200,6 +201,11 @@ class Economic
 	{
 		return new DraftInvoiceBuilder($this->request);
 	}
+
+    public function draftInvoiceAttachment($draftInvoiceNumber)
+    {
+        return new DraftInvoiceAttachmentBuilder($this->request, $draftInvoiceNumber);
+    }
 
 	/**
 	 * @return BookedInvoiceBuilder|Builder
